@@ -97,7 +97,7 @@ export const molecules: Molecule[] = [
     description: "Glucose is a simple sugar with the molecular formula C₆H₁₂O₆. Glucose is the most abundant monosaccharide, a subcategory of carbohydrates. Glucose is mainly made by plants and most algae during photosynthesis from water and carbon dioxide.",
     properties: {
       meltingPoint: 146,
-      boilingPoint: null,
+      boilingPoint: 0,
       density: 1.54,
       solubility: "Highly soluble in water",
       acidity: "Weak acid",
