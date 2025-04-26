@@ -22,7 +22,7 @@ export default function Navbar() {
               className="flex items-center gap-2 text-lg font-semibold"
             >
               <Beaker className="h-6 w-6 text-chart-1" />
-              <span className="hidden sm:block">ChemDashboard</span>
+              <span className="font-sans font-light sm:block">elemix</span>
             </Link>
           </div>
 

@@ -153,14 +153,13 @@ export default function ElementDetail({ element }: ElementDetailProps) {
       </div>
       
       <Tabs value={activeTab} onValueChange={setActiveTab}>
-        <TabsList className="grid grid-cols-4">
+        <TabsList className="grid grid-cols-3">
           <TabsTrigger value="overview">Overview</TabsTrigger>
-          <TabsTrigger value="atomic">Atomic Properties</TabsTrigger>
-          <TabsTrigger value="physical">Physical Properties</TabsTrigger>
+          <TabsTrigger value="properties">Properties</TabsTrigger>
           <TabsTrigger value="history">History</TabsTrigger>
         </TabsList>
         
-        <TabsContent value="overview" className="p-4 border rounded-lg mt-4">
+        <TabsContent value="overview" className="p-4 border rounded-lg">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-lg font-medium mb-3 flex items-center gap-1.5">
@@ -269,10 +268,13 @@ export default function ElementDetail({ element }: ElementDetailProps) {
           </div>
         </TabsContent>
         
-        <TabsContent value="atomic" className="p-4 border rounded-lg mt-4">
+        <TabsContent value="properties" className="p-4 border rounded-lg mt-4">
           <div className="space-y-6">
             <div>
-              <h3 className="text-lg font-medium mb-3">Atomic Radius and Structure</h3>
+              <h3 className="text-lg font-medium mb-3 flex items-center gap-1.5">
+                <Atom className="h-4 w-4" />
+                Atomic Structure
+              </h3>
               <Card>
                 <CardContent className="p-4 space-y-2">
                   <PropertyItem 
@@ -308,7 +310,10 @@ export default function ElementDetail({ element }: ElementDetailProps) {
             </div>
             
             <div>
-              <h3 className="text-lg font-medium mb-3">Electron Properties</h3>
+              <h3 className="text-lg font-medium mb-3 flex items-center gap-1.5">
+                <Droplet className="h-4 w-4" />
+                Electron Properties
+              </h3>
               <Card>
                 <CardContent className="p-4 space-y-2">
                   <PropertyItem 
@@ -328,34 +333,20 @@ export default function ElementDetail({ element }: ElementDetailProps) {
                     unit="eV"
                     tooltip="Energy released when an electron is added to a neutral atom" 
                   />
-                </CardContent>
-              </Card>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-medium mb-3">Chemical Properties</h3>
-              <Card>
-                <CardContent className="p-4 space-y-2">
                   <PropertyItem 
                     label="Oxidation States" 
                     value={element.oxidationStates}
                     tooltip="Common oxidation states of the element in compounds" 
                   />
-                  <PropertyItem 
-                    label="Bonding Type" 
-                    value={element.bondingType}
-                    tooltip="Predominant type of chemical bonding" 
-                  />
                 </CardContent>
               </Card>
             </div>
-          </div>
-        </TabsContent>
-        
-        <TabsContent value="physical" className="p-4 border rounded-lg mt-4">
-          <div className="space-y-6">
+            
             <div>
-              <h3 className="text-lg font-medium mb-3">Thermal Properties</h3>
+              <h3 className="text-lg font-medium mb-3 flex items-center gap-1.5">
+                <Thermometer className="h-4 w-4" />
+                Thermal Properties
+              </h3>
               <Card>
                 <CardContent className="p-4 space-y-2">
                   <PropertyItem 
@@ -370,13 +361,15 @@ export default function ElementDetail({ element }: ElementDetailProps) {
                     unit="K"
                     tooltip="Temperature at which the element boils at standard pressure" 
                   />
-                  {/* Additional thermal properties would be included here */}
                 </CardContent>
               </Card>
             </div>
             
             <div>
-              <h3 className="text-lg font-medium mb-3">Material Properties</h3>
+              <h3 className="text-lg font-medium mb-3 flex items-center gap-1.5">
+                <Box className="h-4 w-4" />
+                Physical Properties
+              </h3>
               <Card>
                 <CardContent className="p-4 space-y-2">
                   <PropertyItem 
@@ -390,7 +383,11 @@ export default function ElementDetail({ element }: ElementDetailProps) {
                     value={element.standardState}
                     tooltip="Physical state at room temperature and pressure" 
                   />
-                  {/* Additional material properties would be included here */}
+                  <PropertyItem 
+                    label="Bonding Type" 
+                    value={element.bondingType}
+                    tooltip="Predominant type of chemical bonding" 
+                  />
                 </CardContent>
               </Card>
             </div>

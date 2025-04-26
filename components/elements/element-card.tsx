@@ -28,9 +28,9 @@ export default function ElementCard({ element, size = 'medium' }: ElementCardPro
       <div 
         className={`${sizeClasses[size]} ${categoryStyle.bg} ${categoryStyle.text} rounded-lg p-2 flex flex-col justify-between transition-transform hover:scale-105 cursor-pointer relative overflow-hidden group border border-border/50`}
       >
-        <div className="flex justify-between items-start">
+        <div className="flex justify-between items-start mx-2">
           <span className="font-mono text-xs">{atomicNumber}</span>
-          {size === 'large' && <span className="text-xs">{category.split('-').join(' ')}</span>}
+          {size === 'large' && <span className="text-xs text-right">{category.split('-').join(' ')}</span>}
         </div>
         
         <div className="text-center">

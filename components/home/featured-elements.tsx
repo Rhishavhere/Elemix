@@ -5,12 +5,12 @@ import ElementCard from '@/components/elements/element-card';
 
 export default function FeaturedElements() {
   // Take a subset of elements to feature
-  const featuredElements = [1, 6, 8, 17, 79, 11].map(atomicNumber => 
+  const featuredElements = Array.from({length: 20}, (_, i) => i + 1).map(atomicNumber =>
     elements.find(el => el.atomicNumber === atomicNumber)
   ).filter(Boolean);
   
   return (
-    <section className="py-12 bg-muted/30 m-4 rounded-xl">
+    <section className="py-4 bg-muted/30 m-4 rounded-xl">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold">Featured Elements</h2>

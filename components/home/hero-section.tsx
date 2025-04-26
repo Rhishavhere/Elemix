@@ -21,7 +21,7 @@ export default function HeroSection() {
         <div className="absolute h-2 w-2 rounded-full bg-chart-5 animate-float-medium left-1/5 top-1/3"></div>
       </div>
 
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 -mb-6">
         <div className="mx-auto max-w-3xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
