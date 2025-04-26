@@ -431,7 +431,7 @@ export default function ElementDetail({ element }: ElementDetailProps) {
               <Card>
                 <CardContent className="p-4">
                   <p className="text-sm text-muted-foreground">
-                    The name "{element.name}" comes from [etymology would be included here]. 
+                    The name &quot;{element.name}&quot; comes from [etymology would be included here]. 
                     The symbol {element.symbol} was derived from [symbol origin would be included here].
                   </p>
                 </CardContent>
