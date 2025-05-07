@@ -8,10 +8,10 @@ export default function FeaturedMolecules() {
   const featuredMolecules = molecules.slice(0, 3);
   
   return (
-    <section className="py-12">
+    <section className="py-12 font-poppins">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-2xl sm:text-3xl font-bold">Featured Molecules</h2>
+          <h2 className="text-xl sm:text-xl">Featured Molecules</h2>
           <Link 
             href="/molecules" 
             className="flex items-center text-sm font-medium text-primary hover:text-primary/80 transition-colors"
