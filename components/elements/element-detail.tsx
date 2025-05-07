@@ -411,19 +411,19 @@ export default function ElementDetail({ element }: ElementDetailProps) {
                     tooltip="Scientist(s) or civilization credited with discovery" 
                   />
                   
-                  <div className="pt-3">
+                  {/* <div className="pt-3">
                     <h4 className="text-sm font-medium mb-2">Historical Significance</h4>
                     <p className="text-sm text-muted-foreground">
                       {element.name} was discovered in {element.yearDiscovered} by {element.discoveredBy}. 
                       It has been an important element in the development of modern chemistry and has numerous 
                       applications across various industries.
                     </p>
-                  </div>
+                  </div> */}
                 </CardContent>
               </Card>
             </div>
             
-            <div>
+            {/* <div>
               <h3 className="text-lg font-medium mb-3">Etymology</h3>
               <Card>
                 <CardContent className="p-4">
@@ -433,9 +433,9 @@ export default function ElementDetail({ element }: ElementDetailProps) {
                   </p>
                 </CardContent>
               </Card>
-            </div>
+            </div> */}
             
-            <div>
+            {/* <div>
               <h3 className="text-lg font-medium mb-3">Historical Uses</h3>
               <Card>
                 <CardContent className="p-4">
@@ -444,7 +444,7 @@ export default function ElementDetail({ element }: ElementDetailProps) {
                   </p>
                 </CardContent>
               </Card>
-            </div>
+            </div> */}
           </div>
         </TabsContent>
       </Tabs>

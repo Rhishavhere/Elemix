@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Search, Menu, X, FlaskRound as Flask, Atom, BookOpen, Activity, Beaker } from "lucide-react";
+import { Search, Menu, X, FlaskRound as Flask, Atom, BookOpen, Activity, Radius, Calculator } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -21,8 +21,8 @@ export default function Navbar() {
               href="/" 
               className="flex items-center gap-2 text-lg font-semibold"
             >
-              <Beaker className="h-6 w-6 text-chart-1" />
-              <span className="font-sans font-light sm:block">elemix</span>
+              <Atom className="h-6 w-6 text-chart-1" />
+              <span className="font-oswald font-regular sm:block text-black/70">elemix</span>
             </Link>
           </div>
 
@@ -43,6 +43,10 @@ export default function Navbar() {
             <Link href="/learn" className="px-3 py-2 text-sm font-medium rounded-md hover:bg-muted/50 transition-colors flex items-center gap-1.5">
               <BookOpen className="h-4 w-4" />
               <span>Learn</span>
+            </Link>
+            <Link href="/calculator" className="px-3 py-2 text-sm font-medium rounded-md hover:bg-muted/50 transition-colors flex items-center gap-1.5">
+              <Calculator className="h-4 w-4" />
+              <span>Calculator</span>
             </Link>
           </div>
 
@@ -162,6 +166,14 @@ export default function Navbar() {
             >
               <BookOpen className="h-5 w-5" />
               <span>Learn</span>
+            </Link>
+            <Link 
+              href="/calculator" 
+              className="block px-3 py-2 text-base font-medium rounded-md hover:bg-muted/50 transition-colors flex items-center gap-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <Calculator className="h-5 w-5" />
+              <span>Calculator</span>
             </Link>
           </div>
         )}

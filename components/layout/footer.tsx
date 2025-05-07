@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Beaker, Github, Twitter } from 'lucide-react';
+import { Atom, Github, Twitter } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -8,8 +8,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2 text-lg font-semibold">
-              <Beaker className="h-6 w-6 text-chart-1" />
-              <span>ChemDashboard</span>
+              <Atom className="h-6 w-6 text-chart-1" />
+              <span>Elemix</span>
             </Link>
             <p className="mt-3 text-sm text-muted-foreground">
               A comprehensive chemistry library with detailed information on elements and molecules.
@@ -107,7 +107,7 @@ export default function Footer() {
         
         <div className="mt-8 pt-6 border-t border-border">
           <p className="text-sm text-muted-foreground text-center">
-            © {new Date().getFullYear()} ChemDashboard. All rights reserved.
+            © {new Date().getFullYear()} Elemix. All rights reserved.
           </p>
         </div>
       </div>

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Search, ArrowRight, Atom, FlaskRound as Flask, Zap } from 'lucide-react';
+import { Search, ArrowRight, Radius, FlaskRound as Flask, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import Link from 'next/link';
@@ -28,10 +28,10 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-xl font-sans tracking-tight sm:text-5xl md:text-6xl">
-              Explore the World of
-              <span className="block text-5xl font-bold bg-gradient-to-r from-chart-1 via-chart-2 to-chart-3 bg-clip-text text-transparent mt-2">
-                Chemistry
+            <h1 className="text-l font-poppins tracking-tight sm:text-5xl md:text-6xl">
+              explore the world of
+              <span className="block text-5xl font-poppins font-medium bg-gradient-to-r from-chart-4 via-chart-5 to-chart-1 bg-clip-text text-transparent mt-2">
+                molecules
               </span>
             </h1>
           </motion.div>
@@ -45,7 +45,7 @@ export default function HeroSection() {
             Your comprehensive database of elements, molecules, and chemical reactions.
           </motion.p>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -66,32 +66,26 @@ export default function HeroSection() {
                 Search
               </Button>
             </div>
-          </motion.div>
+          </motion.div> */}
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-8 flex flex-wrap justify-center gap-4"
+            className="mt-8 flex justify-center gap-4"
           >
-            <Link href="/">
+            <Link href="/elements">
               <Button variant="outline" size="lg" className="gap-2">
-                <Atom className="h-5 w-5" />
-                Explore Elements
+                <Radius className="h-5 w-5" />
+                Elements
               </Button>
             </Link>
-            {/* <Link href="/molecules">
+            <Link href="/molecules">
               <Button variant="outline" size="lg" className="gap-2">
                 <Flask className="h-5 w-5" />
-                Discover Molecules
+                Molecules
               </Button>
             </Link>
-            <Link href="/reactions">
-              <Button variant="outline" size="lg" className="gap-2">
-                <Zap className="h-5 w-5" />
-                View Reactions
-              </Button>
-            </Link> */}
           </motion.div>
         </div>
       </div>
