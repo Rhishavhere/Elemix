@@ -34,7 +34,7 @@ export default function ElementCard({ element, size = 'medium' }: ElementCardPro
         </div>
         
         <div className="text-center">
-          <span className={`font-bold ${size === 'small' ? 'text-lg' : size === 'medium' ? 'text-2xl' : 'text-3xl'}`}>
+          <span className={`font-semibold ${size === 'small' ? 'text-lg' : size === 'medium' ? 'text-2xl' : 'text-3xl'}`}>
             {symbol}
           </span>
           {(size === 'medium' || size === 'large') && (
