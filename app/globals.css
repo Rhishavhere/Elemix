@@ -79,6 +79,11 @@
   }
   body {
     @apply bg-background text-foreground;
-    overflow-y: hidden;
+    /* Hide scrollbar for Webkit browsers */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+  }
+  body::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
   }
 }
