@@ -14,7 +14,7 @@ export default function MoleculeCard({ molecule }: MoleculeCardProps) {
         <CardHeader className="p-4 pb-2">
           <div className="flex items-start justify-between">
             <CardTitle className="font-semibold text-lg">{molecule.name}</CardTitle>
-            <Badge variant="outline" className="ml-2 font-mono">
+            <Badge variant="default" className="ml-2 font-mono">
               {molecule.formula}
             </Badge>
           </div>
