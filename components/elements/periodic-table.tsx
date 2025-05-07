@@ -75,16 +75,16 @@ export default function PeriodicTable() {
 
   return (
     <div className="w-full overflow-hidden border border-border rounded-lg">
-      <div className="bg-card p-4 border-b border-border flex justify-between items-center">
-        <h2 className="text-lg font-semibold">Periodic Table of Elements</h2>
+      <div className="bg-card p-4 border-b border-border flex justify-between items-center text-xs italic">
+        {/* <h2 className="text-lg font-semibold">Periodic Table of Elements</h2> */}
         <div className="flex items-center gap-2">
           <Button 
             variant="outline" 
             size="sm"
             onClick={() => setShowFilters(!showFilters)}
-            className="gap-1"
+            className="gap-0.5 h-7 px-2 py-1 text-xs"
           >
-            <Filter className="h-4 w-4" />
+            <Filter className="h-3 w-3" />
             <span className="hidden sm:inline">Filter</span>
           </Button>
           <div className="flex border border-border rounded-md">
@@ -93,15 +93,15 @@ export default function PeriodicTable() {
               size="icon" 
               onClick={handleZoomOut}
               disabled={scale <= 0.6}
-              className="h-8 w-8 rounded-none"
+              className="h-7 w-7 rounded-none"
             >
-              <Minimize2 className="h-4 w-4" />
+              <Minimize2 className="h-3 w-3" />
             </Button>
             <Button 
               variant="ghost" 
               size="sm"
               onClick={handleReset}
-              className="h-8 border-x border-border rounded-none px-2"
+              className="h-7 border-x border-border rounded-none px-2 text-xs"
             >
               {Math.round(scale * 100)}%
             </Button>
@@ -110,11 +110,13 @@ export default function PeriodicTable() {
               size="icon" 
               onClick={handleZoomIn}
               disabled={scale >= 2}
-              className="h-8 w-8 rounded-none"
+              className="h-7 w-7 rounded-none"
             >
-              <Maximize2 className="h-4 w-4" />
+              <Maximize2 className="h-3 w-3" />
             </Button>
+            
           </div>
+          slide -&gt; mobile view
         </div>
       </div>
 
@@ -161,7 +163,7 @@ export default function PeriodicTable() {
         {selectedCategory ? (
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
             {filteredElements.map(element => (
-              <ElementCard key={element.atomicNumber} element={element} size="large" />
+              <ElementCard key={element.atomicNumber} element={element} size="medium" />
             ))}
           </div>
         ) : (
@@ -183,7 +185,7 @@ export default function PeriodicTable() {
                     left: `${(position.col - 1) * 60}px`,
                   }}
                 >
-                  <ElementCard element={element} size="medium" />
+                  <ElementCard element={element} size="small" />
                 </div>
               );
             })}
