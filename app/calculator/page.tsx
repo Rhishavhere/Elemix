@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { convertUnits, calculateMolarMass } from '../../lib/chemistryUtils';
 
 export default function ChemistryCalculatorPage() {
   const [inputValue, setInputValue] = useState('');
@@ -14,24 +15,30 @@ export default function ChemistryCalculatorPage() {
   const [calculationType, setCalculationType] = useState('unitConversion'); // 'unitConversion', 'molarMass', etc.
 
   const handleCalculate = () => {
-    // Placeholder for calculation logic
     if (calculationType === 'unitConversion') {
       if (!inputValue || !fromUnit || !toUnit) {
         setResult('Please fill in all fields for unit conversion.');
         return;
       }
-      setResult(`Calculated: ${inputValue} ${fromUnit} to ${toUnit} (logic pending)`);
+      const numericValue = parseFloat(inputValue);
+      if (isNaN(numericValue)) {
+        setResult('Please enter a valid number for conversion.');
+        return;
+      }
+      const conversionResult = convertUnits({ value: numericValue, fromUnit, toUnit });
+      setResult(conversionResult);
     } else if (calculationType === 'molarMass') {
       if (!inputValue) {
         setResult('Please enter a chemical formula.');
         return;
       }
-      setResult(`Molar mass of ${inputValue} (logic pending)`);
+      const molarMassResult = calculateMolarMass(inputValue);
+      setResult(molarMassResult);
     }
   };
 
   return (
-    <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8 font-poppins">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
           Chemistry Calculator
