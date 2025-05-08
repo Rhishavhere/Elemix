@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Search, ArrowRight, Radius, Sigma, FlaskRound as Flask, Zap } from 'lucide-react';
+import { Search, ArrowRight, Brain, Radius, Sigma, FlaskRound as Flask, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import Link from 'next/link';
@@ -97,6 +97,19 @@ export default function HeroSection() {
               <Button variant="outline" size="lg" className="gap-2">
                 <Sigma className="h-5 w-5" />
                 Chemistry Calculator 2.0
+              </Button>
+            </Link>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-1 flex justify-center gap-1"
+          >
+            <Link href="/calculator">
+              <Button variant="outline" size="lg" className="gap-2">
+                <Brain className="h-5 w-5" />
+                Expert Chat with ElemixAI
               </Button>
             </Link>
           </motion.div>

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Search, Menu, X, FlaskRound as Flask, Atom, BookOpen, Activity, Radius, Calculator } from "lucide-react";
+import { Search, Menu, X, FlaskRound as Flask, Atom, BookOpen, Activity, Radius, Calculator, Brain } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -47,6 +47,10 @@ export default function Navbar() {
             <Link href="/calculator" className="px-3 py-2 text-sm font-medium rounded-md hover:bg-muted/50 transition-colors flex items-center gap-1.5">
               <Calculator className="h-4 w-4" />
               <span>Calculator</span>
+            </Link>
+            <Link href="/ai-chemist" className="px-3 py-2 text-sm font-medium rounded-md hover:bg-muted/50 transition-colors flex items-center gap-1.5">
+              <Brain className="h-4 w-4" />
+              <span>AI Chemist</span>
             </Link>
           </div>
 
@@ -174,6 +178,14 @@ export default function Navbar() {
             >
               <Calculator className="h-5 w-5" />
               <span>Calculator</span>
+            </Link>
+            <Link 
+              href="/ai-chemist" 
+              className="block px-3 py-2 text-base font-medium rounded-md hover:bg-muted/50 transition-colors flex items-center gap-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <Brain className="h-5 w-5" />
+              <span>AI Chemist</span>
             </Link>
           </div>
         )}
