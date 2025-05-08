@@ -5,10 +5,10 @@ import ChatInterface from '@/components/ai/ChatInterface';
 
 export default function AiChemistPage() {
   return (
-    <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8 font-poppins">
-      <header className="text-center mb-12">
+    <div className="container mx-auto py-6 px-4 sm:px-6 lg:px-8 font-poppins">
+      <header className="text-center mb-6">
         <h1 className="text-2xl font-medium tracking-tight sm:text-2xl md:text-2xl">
-          AI Chemistry Guru
+          Elemix AI Chat
         </h1>
         <p className="mt-2 text-sm text-muted-foreground px-6">
           Ask your chemistry questions and get help from our AI expert.
