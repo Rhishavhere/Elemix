@@ -13,7 +13,7 @@ interface Message {
   text: string;
   sender: 'user' | 'ai';
 }
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const GEMINI_API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
 
 let genAI: GoogleGenerativeAI | null = null;
 if (GEMINI_API_KEY) {
