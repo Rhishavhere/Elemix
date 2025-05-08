@@ -79,7 +79,7 @@ export default function ChatInterface() {
   }, [messages]);
 
   return (
-    <div className="flex flex-col h-[600px] max-w-2xl mx-auto bg-card border rounded-lg shadow-lg">
+    <div className="flex flex-col h-[320px] max-w-2xl mx-auto bg-card border rounded-lg shadow-lg">
       <div className="p-4 border-b">
         <h2 className="text-xl font-semibold"></h2>
       </div>
