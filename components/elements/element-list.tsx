@@ -37,7 +37,7 @@ export default function ElementList({ searchTerm = '' }: ElementListProps) {
           </Link>
         ))}
         {filteredElements.length === 0 && searchTerm && (
-          <p className="text-muted-foreground text-center py-4">No elements found matching "{searchTerm}".</p>
+          <p className="text-muted-foreground text-center py-4">No elements found matching &quot;{searchTerm}&quot;.</p>
         )}
       </div>
     </div>
