@@ -1,14 +1,33 @@
 "use client";
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Search, ArrowRight, Brain, Radius, Sigma, FlaskRound as Flask, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import Link from 'next/link';
 
+const words = ["molecules", "substances", "elements", "reactions"];
+
 export default function HeroSection() {
   const [searchQuery, setSearchQuery] = useState('');
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 2500);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  const currentWord = words[index];
+
+  const textVariants = {
+    initial: { opacity: 0, y: -20 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: 20 },
+  };
 
   return (
     <section className="relative overflow-hidden bg-background py-16 sm:py-24">
@@ -28,10 +47,22 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-l font-poppins tracking-tight sm:text-5xl md:text-6xl">
+            <h1 className="text-l font-poppins tracking-tight sm:text-l md:text-l">
               explore the world of
-              <span className="block text-5xl font-poppins font-medium bg-gradient-to-r from-chart-4 via-chart-5 to-chart-1 bg-clip-text text-transparent mt-2">
-                molecules
+              <span className="block mt-2 relative h-14 overflow-hidden">
+                <AnimatePresence initial={false} mode="popLayout">
+                  <motion.span
+                    key={currentWord}
+                    className="absolute top-0 left-0 w-full block text-5xl font-poppins font-medium bg-gradient-to-r from-chart-4 via-chart-5 to-chart-1 bg-clip-text text-transparent"
+                    variants={textVariants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    transition={{ duration: 0.4 }}
+                  >
+                    {currentWord}
+                  </motion.span>
+                </AnimatePresence>
               </span>
             </h1>
           </motion.div>
