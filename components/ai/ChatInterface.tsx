@@ -13,12 +13,6 @@ interface Message {
   text: string;
   sender: 'user' | 'ai';
 }
-
-// !! IMPORTANT SECURITY WARNING !!
-// Exposing your API key on the client-side is a significant security risk.
-// It's highly recommended to keep API calls requiring secret keys on the server-side
-// using an API route, as you had before.
-// If you proceed, ensure you understand the implications.
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 let genAI: GoogleGenerativeAI | null = null;
