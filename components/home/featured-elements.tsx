@@ -8,7 +8,7 @@ export default function FeaturedElements() {
   // const featuredElements = Array.from({length: 4}, (_, i) => i + 1).map(atomicNumber =>
   //   elements.find(el => el.atomicNumber === atomicNumber)
   // ).filter(Boolean);
-  const featuredElements = [1, 5, 7, 11].map(atomicNumber =>
+  const featuredElements = [1, 5, 7, 11, 28, 36].map(atomicNumber =>
     elements.find(el => el.atomicNumber === atomicNumber)
   ).filter(Boolean);
   

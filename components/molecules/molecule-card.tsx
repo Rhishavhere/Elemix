@@ -20,11 +20,11 @@ export default function MoleculeCard({ molecule }: MoleculeCardProps) {
           </div>
         </CardHeader>
         <CardContent className="p-4 pt-0">
-          <div className="mt-2 bg-muted/30 aspect-video rounded-md flex items-center justify-center overflow-hidden">
+          {/* <div className="mt-2 bg-muted/30 aspect-video rounded-md flex items-center justify-center overflow-hidden">
             <div className="text-4xl font-mono transform group-hover:scale-110 transition-transform duration-500">
               {molecule.formula}
             </div>
-          </div>
+          </div> */}
           <p className="mt-3 text-sm text-muted-foreground line-clamp-2">
             {molecule.description}
           </p>
