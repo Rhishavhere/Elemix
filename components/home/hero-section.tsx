@@ -137,7 +137,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-1 flex justify-center gap-1"
           >
-            <Link href="/ai-chemist">
+            <Link href="/elemixai">
               <Button variant="outline" size="lg" className="gap-2">
                 <Brain className="h-5 w-5" />
                 Expert Chat with ElemixAI

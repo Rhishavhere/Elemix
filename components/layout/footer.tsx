@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Atom, Github, Twitter } from 'lucide-react';
+import { Atom } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -14,14 +14,6 @@ export default function Footer() {
             <p className="mt-3 text-sm text-muted-foreground">
               A comprehensive chemistry library with detailed information on elements and molecules.
             </p>
-            <div className="mt-4 flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                <Github className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-            </div>
           </div>
           
           <div className="md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
